@@ -1,5 +1,7 @@
 🔬 AdaptiveLens
 
+> **Note** Since this is a live demo hosted on Render's free tier, the backend might need a moment to "wake up" the first time you visit. Also, because we're using a local vector store (ChromaDB) on a temporary server, uploaded documents are session-based—so if the server restarts, you might need to re-upload your PDF to start a new chat!
+
 AdaptiveLens is our take on making learning feel a bit more... human. Academic papers and complex textbooks can be intimidating, so we built a system that translates that complexity into something you can actually use, whether you're a curious student or a deep-dive researcher.
 
 We built this for the **AI4Dev '26 Hackathon** because we believe everyone deserves access to high-level knowledge, regardless of their starting point.
