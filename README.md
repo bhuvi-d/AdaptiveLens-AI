@@ -1,132 +1,63 @@
-# 🔬 AdaptiveLens: AI-Driven Personalized Learning
+🔬 AdaptiveLens
 
-[![Hackathon](https://img.shields.io/badge/Hackathon-AI4Dev%20'26-blueviolet?style=for-the-badge)](https://ai4dev.example.com)
-[![Team ID](https://img.shields.io/badge/Team%20ID-PS060152-orange?style=for-the-badge)](#)
-[![Domain](https://img.shields.io/badge/Domain-Education%20Technology-green?style=for-the-badge)](#)
+AdaptiveLens is our take on making learning feel a bit more... human. Academic papers and complex textbooks can be intimidating, so we built a system that translates that complexity into something you can actually use, whether you're a curious student or a deep-dive researcher.
 
-> **AdaptiveLens** is an AI-powered educational ecosystem designed to democratize learning and improve accessibility. It transforms complex academic content into personalized, level-appropriate knowledge using advanced RAG (Retrieval-Augmented Generation) and NLP techniques.
+We built this for the **AI4Dev '26 Hackathon** because we believe everyone deserves access to high-level knowledge, regardless of their starting point.
 
 ---
 
-## 🌍 Global Impact & Vision
-Built for the **AI4Dev '26 Hackathon** under the theme **AI-Enabled Transformative Technologies for Global Development**, AdaptiveLens addresses the global education gap by:
-- **Personalizing Education**: Tailoring content for students, researchers, and lifelong learners.
-- **Enhancing Accessibility**: Simplifying jargon-heavy academic papers into digestible knowledge.
-- **Skill Assessment**: Generating real-time quizzes to validate understanding.
+### 🌟 What is AdaptiveLens?
+
+Imagine you're reading a dense research paper about quantum physics. Instead of getting stuck on jargon, you just move a slider.
+*   **Slide left**, and it explains it like you're in high school. 
+*   **Slide right**, and it opens up the technical details for a professional level.
+
+It’s about **AI-driven personalized learning**. We don't just summarize; we adapt the actual language and complexity to match your "vibe" and skill level.
+
+### 🛠️ What it does
+- **Smart Conversations**: Upload a PDF and just talk to it. It uses RAG to stay grounded in the actual facts of your document.
+- **Complexity at Your Command**: A 5-level slider that shifts the depth of explanations in real-time.
+- **Checking Your Progress**: It generates quizzes on the fly to help you see what you've actually absorbed.
+- **Bridge the Gap**: It identifies concepts you might not know yet and offers small summaries to help you understand the bigger picture.
 
 ---
 
-## ✨ Key Features
-
-- **🎯 5-Level Complexity Control**: Instantly shift the explanation depth from *Beginner* to *Researcher* using a dynamic slider.
-- **📄 Smart RAG Engine**: Upload PDFs and chat with them using a hybrid search system (Vector + Keyword) for pinpoint accuracy.
-- **📊 Readability Scoring**: Every AI response is validated with a real-time **Flesch Reading Ease** score to ensure it matches the target level.
-- **📝 Intelligent Quiz Generation**: Automatically generates MCQs and conceptual questions based on your specific learning material.
-- **🧠 Knowledge Scaffolding**: Detects prerequisite concepts in the text and offers "bridge" summaries to help you understand advanced topics.
-- **⚡ TL;DR Summaries**: Get the "too long; didn't read" essence of any complex document in seconds.
+### 🧩 How it works (The Stack)
+We kept it modern and fast:
+- **Frontend**: Next.js (React) with a clean, intuitive look.
+- **Backend**: Python FastAPI handling the heavy lifting.
+- **AI Core**: Powered by **Gemini 1.5 Pro** for the smarts.
+- **Memory**: ChromaDB keeps track of your documents and their context.
 
 ---
 
-## 🔧 Tech Stack
+### 🚀 Getting it running on your machine
 
-| Layer | Technology | Role |
-| :--- | :--- | :--- |
-| **Frontend** | Next.js 14, TypeScript, Tailwind CSS | High-performance, responsive UI |
-| **Backend** | Python FastAPI | Scalable asynchronous API |
-| **AI Model** | Gemini 1.5 Pro | State-of-the-art reasoning |
-| **Embeddings** | Google Gemini Embeddings | Semantic representation |
-| **Vector DB** | ChromaDB (Persistent) | Contextual document storage |
-| **NLP Utilities** | Textstat, Rank Fusion | Readability & Search optimization |
-
----
-
-## 📁 Project Structure
-
-```bash
-AdaptiveLens/
-├── backend/
-│   ├── app/
-│   │   ├── main.py              # FastAPI entry point
-│   │   ├── routers/             # API endpoints (Upload, Chat, Quiz)
-│   │   ├── services/            # RAG, NLP & Gemini Logic
-│   │   └── db/                  # Vector storage handling
-│   └── requirements.txt         # Python dependencies
-├── frontend/
-│   ├── src/
-│   │   ├── app/                 # Next.js Pages
-│   │   ├── components/          # React Components (Slider, Chat, PDF)
-│   │   └── lib/                 # API Client integration
-│   └── package.json             # Frontend dependencies
-└── README.md                    # You are here!
-```
-
----
-
-## 🚀 Installation & Setup
-
-### Prerequisites
-- Python 3.10+
-- Node.js 18+
-- Gemini API Key
-
-### 1. Clone & Install Backend
+**1. Backend**
 ```bash
 cd backend
 python -m venv venv
-# Activate venv:
-# Windows: .\venv\Scripts\activate | Unix: source venv/bin/activate
+# Activate it (venv\Scripts\activate on Windows)
 pip install -r requirements.txt
-```
-Create a `.env` file in the `backend/` directory:
-```env
-GOOGLE_API_KEY=your_gemini_api_key_here
+# Add your GOOGLE_API_KEY to a .env file
+uvicorn app.main:app --reload
 ```
 
-### 2. Install Frontend
+**2. Frontend**
 ```bash
 cd frontend
 npm install
+npm run dev
 ```
 
----
-
-## 🛠️ Running Locally
-
-1. **Start Backend**:
-   ```bash
-   uvicorn app.main:app --reload --port 8000
-   ```
-2. **Start Frontend**:
-   ```bash
-   npm run dev
-   ```
-3. **Access**:
-   - Web App: `http://localhost:3000`
-   - API Docs: `http://localhost:8000/docs`
+Point your browser to `http://localhost:3000` and you're good to go!
 
 ---
 
-## ☁️ Deployment Guide
-
-### Deployment Options
-For the hackathon demo, we recommend:
-1. **Frontend**: [Vercel](https://vercel.com/) (Best for Next.js)
-2. **Backend**: [Render](https://render.com/) or [Railway](https://railway.app/) (Best for FastAPI)
-3. **Database**: Since ChromaDB uses local storage by default, for persistent cloud storage, use [ChromaDB Managed](https://www.trychroma.com/) or a Dockerized instance with persistent volumes.
-
-### Push to GitHub (Steps for Team)
-1. Initialize Git (if not done): `git init`
-2. Add files: `git add .`
-3. Commit: `git commit -m "feat: initial release for AI4Dev '26"`
-4. Create Repo on GitHub and link: `git remote add origin YOUR_REPO_URL`
-5. Push: `git push -u origin main`
-
----
-
-## 🏆 Team Info
+### 🏆 Hackathon Details
+- **Event**: AI4Dev '26 - AI-Enabled Transformative Technologies for Global Development
+- **Domain**: Education Technology (EdTech)
 - **Team ID**: PS060152
-- **Hackathon**: AI4Dev '26
-- **Track**: AI-Enabled Transformative Technologies for Global Development
 
 ---
-*Created with ❤️ for a smarter, more accessible future.*
+*Built with ❤️ to make learning a little less scary and a lot more accessible.*
