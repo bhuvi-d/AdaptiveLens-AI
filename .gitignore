@@ -1,0 +1,52 @@
+# Project Root Gitignore
+
+# Dependency directories
+node_modules/
+*/node_modules/
+venv/
+.venv/
+*/venv/
+*/.venv/
+
+# Build outputs
+.next/
+*/.next/
+dist/
+build/
+out/
+
+# Environments
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*/.env
+*/.env.local
+
+# Python
+__pycache__/
+*/__pycache__/
+*.py[cod]
+*$py.class
+
+# Application Specific
+storage/
+*/storage/
+chroma_db/
+*/chroma_db/
+temp_uploads/
+*/temp_uploads/
+
+# IDEs/System
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+
+# Temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
