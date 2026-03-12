@@ -4,7 +4,7 @@
 
 AdaptiveLens is our take on making learning feel a bit more... human. Academic papers and complex textbooks can be intimidating, so we built a system that translates that complexity into something you can actually use, whether you're a curious student or a deep-dive researcher.
 
-We built this for the **AI4Dev '26 Hackathon** because we believe everyone deserves access to high-level knowledge, regardless of their starting point.
+
 
 ---
 
@@ -56,10 +56,5 @@ Point your browser to `http://localhost:3000` and you're good to go!
 
 ---
 
-### 🏆 Hackathon Details
-- **Event**: AI4Dev '26 - AI-Enabled Transformative Technologies for Global Development
-- **Domain**: Education Technology (EdTech)
-- **Team ID**: PS060152
 
----
 *Built with ❤️ to make learning a little less scary and a lot more accessible.*
