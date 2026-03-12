@@ -1,4 +1,4 @@
-🔬 AdaptiveLens
+🔬 AdaptiveLens-AI
 
 > **Note** Since this is a live demo hosted on Render's free tier, the backend might need a moment to "wake up" the first time you visit. Also, because we're using a local vector store (ChromaDB) on a temporary server, uploaded documents are session-based , so if the server restarts, you might need to re-upload your PDF to start a new chat!
 
